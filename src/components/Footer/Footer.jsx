@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white mt-10 rounded-3xl">
+    <footer className="bg-pink-200 mt-10 rounded-3xl">
       <div className="p-10 grid md:grid-cols-3 gap-8">
         
         <div className="text-center">
@@ -45,16 +45,16 @@ const Footer = () => {
         <div className="text-center">
           <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
           <div className="flex space-x-4 text-xl justify-center">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-gray-200">
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-pink-500">
               <FaFacebookF />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-gray-200">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-pink-500">
               <FaInstagram />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-gray-200">
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-pink-500">
               <FaTwitter />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-gray-200">
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-pink-500">
               <FaLinkedinIn />
             </a>
           </div>
