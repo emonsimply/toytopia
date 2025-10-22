@@ -1,8 +1,13 @@
-import React from "react";
+import React, { use } from "react";
 import { NavLink, Link } from "react-router";
-import './Navbar.css'
+import "./Navbar.css";
+import { AuthContext } from "../../contexts/Auth/AuthContext";
+import Swal from "sweetalert2";
+import userLogo from "../../assets/user.png"
 
 const Navbar = () => {
+  const { SignOut, user } = use(AuthContext);
+
   const navItems = (
     <>
       <li>
@@ -11,9 +16,31 @@ const Navbar = () => {
       <li>
         <NavLink to="my-profile">My Profile</NavLink>
       </li>
-      
     </>
   );
+
+  const handleSignOut = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out from your account!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#F379A7",
+      cancelButtonColor: "#aaa",
+      confirmButtonText: "Yes, logout",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        SignOut()
+          .then(() => {
+            Swal.fire("Logged out!", "You have been logged out.", "success");
+          })
+          .catch((error) => {
+            Swal.fire("Error!", error.message, "error");
+          });
+      }
+    });
+  };
+
   return (
     <div className="navbar bg-white shadow-sm rounded-full">
       <div className="navbar-start ">
@@ -42,19 +69,43 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl font-bold text-pink-500">ToyTopia</a>
+        <a className="btn btn-ghost text-xl font-bold text-pink-500">
+          ToyTopia
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-gray-600">{navItems}</ul>
       </div>
-      <div className="navbar-end mr-2">
-        <Link
-          to="/login"
-          className="btn bg-pink-500 text-white font-bold rounded-full "
-        >
-          Login
-        </Link>
-      </div>
+
+      {user ? (
+        <div className="navbar-end mr-2">
+  <div className="relative group mr-3">
+    <img
+      src={user.photoURL || {userLogo}}
+      alt="User"
+      className="w-10 h-10 rounded-full border-2 border-gray-400 cursor-pointer"
+    />
+    <span className="absolute left-1/2 -translate-x-1/2 top-12 bg-pink-100 text-xs font-semibold px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap shadow-md">
+      {user.displayName || "User"}
+    </span>
+  </div>
+  <button
+    onClick={handleSignOut}
+    className="btn bg-pink-500 text-white font-bold rounded-full"
+  >
+    LogOut
+  </button>
+</div>
+      ) : (
+        <div className="navbar-end mr-2">
+          <Link
+            to="/login"
+            className="btn bg-pink-500 text-white font-bold rounded-full "
+          >
+            Login
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

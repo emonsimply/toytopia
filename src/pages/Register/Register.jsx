@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 
 const Register = () => {
-  const { createUser, singInWithGoogle } = use(AuthContext);
+  const { createUser, singInWithGoogle, updateUserProfile } = use(AuthContext);
   
 
   //Password validation rules
@@ -40,14 +40,18 @@ const Register = () => {
     }
 
     createUser(email, password)
-    .then((result) => {
-        Swal.fire({
-          icon: "success",
-          title: "Registration Successful!",
-          text: "Welcome to ToyTopia!",
-        });
-        console.log("Registered user:", result.user);
+      .then(() => {
         
+        updateUserProfile(name, photoURL)
+          .then(() => {
+            Swal.fire({
+              icon: "success",
+              title: "Registration Successful!",
+              text: "Welcome to ToyTopia!",
+            });
+            
+          })
+          .catch(() => {});
       })
       .catch((err) => {
         Swal.fire({
