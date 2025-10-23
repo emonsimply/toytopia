@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 
 const ToyCard = ({ toy }) => {
-  const { _id, pictureURL, toyName, rating, availableQuantity, price } = toy;
+  const { toyId, pictureURL, toyName, rating, availableQuantity, price } = toy;
 
   return (
     <div className="bg-white shadow-lg rounded-2xl hover:shadow-pink-300 transition-all duration-300">
@@ -22,7 +22,7 @@ const ToyCard = ({ toy }) => {
         <p className="text-lg font-semibold">Price: ${price}</p>
 
         
-          <Link to={`/toy/${_id}`}>
+          <Link to={`/toyDetails/${toyId}`}>
             <button className="btn mt-2 bg-pink-500 hover:bg-pink-600 text-white">
               View More
             </button>

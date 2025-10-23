@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/Error/ErrorPage";
 import Toys from "../pages/Toys/Toys";
 import PrivateRoute from "./PrivateRoute";
+import ToyDetails from "../pages/Toys/ToyDetails";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
       {
         path: '/toys',
         element: <PrivateRoute><Toys></Toys></PrivateRoute>,
+      },
+      {
+        path: '/toyDetails/:id',
+        element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
       }
     ]
   },
