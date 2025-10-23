@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 import userIcon from "../../assets/user.png";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyProfile = () => {
   const { user, updateUserProfile } = use(AuthContext);
@@ -30,6 +31,10 @@ const MyProfile = () => {
 
   return (
     <div className="max-w-md mx-auto p-6 mt-10 bg-white shadow-lg rounded-3xl">
+      <Helmet>
+        <title>My Profile</title>
+        <meta name="description" content="ToyTopia — local kids toy marketplace." />
+      </Helmet>
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-500">
         My Profile
       </h2>
