@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -14,29 +15,28 @@ import {
 const GoogleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
-
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-
-
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const singInUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const singInWithGoogle = () => {
+    setLoading(true);
     return signInWithPopup(auth, GoogleProvider);
   };
 
   const SignOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
-
-  
 
   // get current user info
   useEffect(() => {
@@ -49,13 +49,15 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-
   const updateUserProfile = (name, photoURL) => {
-  return updateProfile(auth.currentUser, {
-    displayName: name,
-    photoURL: photoURL,
-  });
-};
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photoURL,
+    });
+  };
+  const passwordReset = (email) => {
+    return sendPasswordResetEmail(auth, email)
+  };
 
   const authInfo = {
     createUser,
@@ -64,6 +66,7 @@ const AuthProvider = ({ children }) => {
     SignOut,
     user,
     updateUserProfile,
+    passwordReset,
     loading,
   };
 

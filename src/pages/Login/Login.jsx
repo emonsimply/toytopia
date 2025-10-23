@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 const Login = () => {
   const { singInUser, singInWithGoogle } = use(AuthContext);
 
+  
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -55,6 +56,8 @@ const Login = () => {
       });
   };
 
+  
+
   return (
     <div className="card bg-white w-full max-w-sm mx-auto shrink-0 shadow-lg rounded-3xl">
       <div className="card-body">
@@ -78,30 +81,32 @@ const Login = () => {
               placeholder="Password"
             />
             <div>
+              <Link to='/forget-password'>
               <a className="link link-hover">Forgot password?</a>
+              </Link>
             </div>
             <button className="btn rounded-full bg-pink-500 text-white hover:bg-pink-600 mt-4">
               Login
             </button>
             <div className="divider">OR</div>
-            <button
-              onClick={handleGoogleLogin}
-              className="btn rounded-full bg-gray-100"
-            >
-              <FcGoogle />
-              Login with Google
-            </button>
-            <p className="text-center text-sm text-gray-600 mt-4">
-              Don't have an account?{" "}
-              <Link
-                to="/register"
-                className="text-pink-500 font-semibold hover:underline"
-              >
-                Register
-              </Link>
-            </p>
           </fieldset>
         </form>
+        <button
+          onClick={handleGoogleLogin}
+          className="btn rounded-full bg-gray-100"
+        >
+          <FcGoogle />
+          Login with Google
+        </button>
+        <p className="text-center text-sm text-gray-600 mt-4">
+          Don't have an account?{" "}
+          <Link
+            to="/register"
+            className="text-pink-500 font-semibold hover:underline"
+          >
+            Register
+          </Link>
+        </p>
       </div>
     </div>
   );

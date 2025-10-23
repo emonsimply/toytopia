@@ -3,10 +3,15 @@ import { NavLink, Link } from "react-router";
 import "./Navbar.css";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 import Swal from "sweetalert2";
-import userLogo from "../../assets/user.png"
+import userLogo from "../../assets/user.png";
+import LoadingSpinner from "../../pages/LoadingSpinner/LoadingSpinner";
 
 const Navbar = () => {
-  const { SignOut, user } = use(AuthContext);
+  const { SignOut, user, loading } = use(AuthContext);
+
+  if (loading) {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
 
   const navItems = (
     <>
@@ -16,9 +21,11 @@ const Navbar = () => {
       <li>
         <NavLink to="/toys">Toys</NavLink>
       </li>
-      <li>
-        <NavLink to="my-profile">My Profile</NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink to="my-profile">My Profile</NavLink>
+        </li>
+      )}
     </>
   );
 
@@ -82,23 +89,23 @@ const Navbar = () => {
 
       {user ? (
         <div className="navbar-end mr-2">
-  <div className="relative group mr-3">
-    <img
-      src={user.photoURL || {userLogo}}
-      alt="User"
-      className="w-10 h-10 rounded-full border-2 border-gray-400 cursor-pointer"
-    />
-    <span className="absolute left-1/2 -translate-x-1/2 top-12 bg-pink-100 text-xs font-semibold px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap shadow-md">
-      {user.displayName || "User"}
-    </span>
-  </div>
-  <button
-    onClick={handleSignOut}
-    className="btn bg-pink-500 text-white font-bold rounded-full"
-  >
-    LogOut
-  </button>
-</div>
+          <div className="relative group mr-3">
+            <img
+              src={user.photoURL || { userLogo }}
+              alt="User"
+              className="w-10 h-10 rounded-full border-2 border-gray-400 cursor-pointer"
+            />
+            <span className="absolute left-1/2 -translate-x-1/2 top-12 bg-pink-100 text-xs font-semibold px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap shadow-md">
+              {user.displayName || "No Name"}
+            </span>
+          </div>
+          <button
+            onClick={handleSignOut}
+            className="btn bg-pink-500 text-white font-bold rounded-full"
+          >
+            LogOut
+          </button>
+        </div>
       ) : (
         <div className="navbar-end mr-2">
           <Link

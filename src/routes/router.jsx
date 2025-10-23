@@ -7,6 +7,8 @@ import ErrorPage from "../pages/Error/ErrorPage";
 import Toys from "../pages/Toys/Toys";
 import PrivateRoute from "./PrivateRoute";
 import ToyDetails from "../pages/Toys/ToyDetails";
+import MyProfile from "../pages/MyProfile/MyProfile";
+import ForgetPassword from "../pages/ForgetPassword/ForgetPassword";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ export const router = createBrowserRouter([
       {
         path: '/toyDetails/:id',
         element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+      },
+      {
+        path: '/my-profile',
+        element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>,
+      },
+      {
+        path: '/forget-password',
+        element: <ForgetPassword></ForgetPassword>,
       }
     ]
   },

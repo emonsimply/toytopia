@@ -8,7 +8,7 @@ const PopularToys = () => {
   const { toys, loading } = useToys();
   
   return (
-    <div className="flex flex-col items-center my-16">
+    <div className="flex flex-col items-center my-16" data-aos="zoom-in-left"  data-aos-duration="3000">
       <div className="text-center">
         <h1 className="text-3xl font-bold mb-2 text-pink-600">Popular Toys</h1>
       </div>

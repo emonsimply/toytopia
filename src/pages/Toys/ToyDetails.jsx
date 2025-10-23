@@ -7,10 +7,10 @@ import Swal from "sweetalert2";
 const ToyDetails = () => {
   const { toys, loading } = useToys();
   const { id } = useParams();
-  console.log(id);
+  
 
   const singleToy = toys.find((toy) => toy.toyId == parseInt(id));
-  console.log(singleToy);
+  
 
   const handleTryNow = (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ const ToyDetails = () => {
       {loading ? (
         <LoadingSpinner></LoadingSpinner>
       ) : (
-        <div className="max-w-4xl mx-auto my-10 p-6 bg-white shadow-lg rounded-2xl">
+        <div className="max-w-4xl mx-auto my-10 p-6 bg-white shadow-lg rounded-3xl">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <img
               className="w-full md:w-1/2"

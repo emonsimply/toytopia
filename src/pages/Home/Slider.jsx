@@ -2,7 +2,7 @@ import React from 'react';
 
 const Slider = () => {
    return (
-    <div className="">
+    <div data-aos="zoom-in-right"  data-aos-duration="3000">
       
 
       <div className="carousel w-full rounded-3xl shadow-lg">
