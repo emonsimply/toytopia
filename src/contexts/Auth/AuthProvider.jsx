@@ -11,6 +11,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import LoadingSpinner from "../../pages/LoadingSpinner/LoadingSpinner";
 
 const GoogleProvider = new GoogleAuthProvider();
 
@@ -53,10 +54,17 @@ const AuthProvider = ({ children }) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photoURL,
+    }).then(() => {
+      setUser({
+        ...auth.currentUser,
+        displayName: name,
+        photoURL: photoURL,
+      });
     });
   };
+
   const passwordReset = (email) => {
-    return sendPasswordResetEmail(auth, email)
+    return sendPasswordResetEmail(auth, email);
   };
 
   const authInfo = {
@@ -70,6 +78,9 @@ const AuthProvider = ({ children }) => {
     loading,
   };
 
+  if (loading) {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   return <AuthContext value={authInfo}>{children}</AuthContext>;
 };
 

@@ -1,7 +1,3 @@
-
-
-// import { FaTruckFast, FaShieldAlt, FaSmile, FaGift } from "react-icons/fa";
-
 import { FaGift, FaShieldAlt, FaSmile } from "react-icons/fa";
 import { FaTruckFast } from "react-icons/fa6";
 

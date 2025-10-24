@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import ToyDetails from "../pages/Toys/ToyDetails";
 import MyProfile from "../pages/MyProfile/MyProfile";
 import ForgetPassword from "../pages/ForgetPassword/ForgetPassword";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
       {
         path: '/forget-password',
         element: <ForgetPassword></ForgetPassword>,
+      },
+      {
+        path: '/about',
+        element: <PrivateRoute><AboutUs></AboutUs></PrivateRoute>,
       }
     ]
   },

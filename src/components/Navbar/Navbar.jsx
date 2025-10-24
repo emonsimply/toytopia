@@ -21,6 +21,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/toys">Toys</NavLink>
       </li>
+      <li>
+        <NavLink to="/about">About Us</NavLink>
+      </li>
       {user && (
         <li>
           <NavLink to="my-profile">My Profile</NavLink>
