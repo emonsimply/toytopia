@@ -24,7 +24,7 @@ const Slider = () => {
   ];
 
   return (
-    <section className="mt-5">
+    <section className="mt-5" data-aos="zoom-in-right"  data-aos-duration="3000">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

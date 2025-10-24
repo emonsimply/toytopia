@@ -6,12 +6,12 @@ const ToyCard = ({ toy }) => {
   const { toyId, pictureURL, toyName, rating, availableQuantity, price } = toy;
 
   return (
-    <div className="bg-white shadow-lg rounded-2xl hover:shadow-pink-300 transition-all duration-300">
+    <div className=" rounded-2xl hover:shadow-pink-300  bg-white shadow-xl hover:scale-101 transition-transform duration-300">
       <div>
         <img
           src={pictureURL}
           alt={toyName}
-          className="rounded-xl w-full h-48 object-cover"
+          className="rounded-t-2xl w-full h-48 object-cover"
         />
       </div>
 
@@ -23,7 +23,7 @@ const ToyCard = ({ toy }) => {
 
         
           <Link to={`/toyDetails/${toyId}`}>
-            <button className="btn mt-2 bg-pink-500 hover:bg-pink-600 text-white">
+            <button className="btn w-full mt-2 rounded-full bg-pink-500 hover:bg-pink-600 text-white">
               View More
             </button>
           </Link>

@@ -23,7 +23,7 @@ const PopularToys = () => {
         </div>
       )}
 
-      <Link to="/toys" className="btn px-8 rounded-full shadow-md  text-white bg-pink-500 hover:bg-pink-600">
+      <Link to="/toys" className="px-8 bg-linear-to-r btn from-pink-500 to-purple-500 text-white font-semibold rounded-full hover:scale-105 transition-transform duration-300 hover:bg-linear-to-l hover:shadow-md">
         Show All
       </Link>
     </div>

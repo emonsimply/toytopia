@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { createUser, singInWithGoogle, updateUserProfile } = use(AuthContext);
@@ -80,6 +81,10 @@ const Register = () => {
 
   return (
     <div className="card bg-white w-full max-w-sm mx-auto shrink-0 shadow-lg rounded-3xl">
+      <Helmet>
+        <title>Register | ToyTopia</title>
+        <meta name="description" content="Create your ToyTopia account to start exploring toys." />
+      </Helmet>
       <div className="card-body">
         <form onSubmit={handleRegister}>
           <fieldset className="fieldset relative">

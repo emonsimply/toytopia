@@ -1,10 +1,16 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router";
 
 
 const ErrorPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-pink-50 text-center">
+
+      <Helmet>
+        <title>404 Not Found | ToyTopia</title>
+        <meta name="description" content="Oops! The page you're looking for doesn't exist." />
+      </Helmet>
       <h1 className="text-9xl font-extrabold text-pink-500 mb-4">404</h1>
       <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-3">
         Oops! Page Not Found

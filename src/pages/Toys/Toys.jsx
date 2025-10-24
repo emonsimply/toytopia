@@ -2,12 +2,19 @@ import React from "react";
 import useToys from "../../hooks/useToys";
 import ToyCard from "./ToyCard";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import { Helmet } from "react-helmet";
 
 const Toys = () => {
   const { toys, loading } = useToys();
   return (
     <div>
-      
+      <Helmet>
+        <title>Toys | ToyTopia</title>
+        <meta
+          name="description"
+          content="Browse the best local toys for your kids on ToyTopia."
+        />
+      </Helmet>
       <div className="text-center">
         <h1 className="text-3xl font-bold text-pink-600">All Toys</h1>
       </div>

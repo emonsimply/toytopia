@@ -3,14 +3,13 @@ import { useParams } from "react-router";
 import useToys from "../../hooks/useToys";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const ToyDetails = () => {
   const { toys, loading } = useToys();
   const { id } = useParams();
-  
 
   const singleToy = toys.find((toy) => toy.toyId == parseInt(id));
-  
 
   const handleTryNow = (e) => {
     e.preventDefault();
@@ -25,6 +24,14 @@ const ToyDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        {" "}
+        <title>Toy Details | ToyTopia</title>{" "}
+        <meta
+          name="description"
+          content="Detailed information about your favorite toy on ToyTopia."
+        />{" "}
+      </Helmet>
       {loading ? (
         <LoadingSpinner></LoadingSpinner>
       ) : (

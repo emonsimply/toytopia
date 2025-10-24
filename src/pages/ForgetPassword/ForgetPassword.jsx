@@ -1,6 +1,7 @@
 import React, { use, useRef } from "react";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const ForgetPassword = () => {
   const { passwordReset } = use(AuthContext);
@@ -8,7 +9,6 @@ const ForgetPassword = () => {
 
   const handlePassword = () => {
     const email = emailRef.current.value;
-    console.log(email)
     passwordReset(email)
     .then(() => {
         Swal.fire({
@@ -31,6 +31,10 @@ const ForgetPassword = () => {
 
   return (
     <div className="card bg-white w-full max-w-sm mx-auto shrink-0 shadow-lg rounded-3xl">
+      <Helmet>
+        <title>Reset Password | ToyTopia</title>
+        <meta name="description" content="Reset your ToyTopia account password securely." />
+      </Helmet>
       <div className="card-body">
         <fieldset className="fieldset">
           <h1 className="text-3xl font-bold text-center mb-6 text-pink-500">

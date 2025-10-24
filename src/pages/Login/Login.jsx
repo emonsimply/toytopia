@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { singInUser, singInWithGoogle } = use(AuthContext);
@@ -60,6 +61,10 @@ const Login = () => {
 
   return (
     <div className="card bg-white w-full max-w-sm mx-auto shrink-0 shadow-lg rounded-3xl">
+      <Helmet>
+        <title>Login | ToyTopia</title>
+        <meta name="description" content="Login to ToyTopia and explore local toy deals." />
+      </Helmet>
       <div className="card-body">
         <form onSubmit={handleLogin}>
           <fieldset className="fieldset">
