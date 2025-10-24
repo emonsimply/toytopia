@@ -52,7 +52,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-white shadow-sm rounded-full">
+    <div className="navbar bg-white  shadow-sm rounded-full">
       <div className="navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -99,9 +99,10 @@ const Navbar = () => {
               {user.displayName || "No Name"}
             </span>
           </div>
+
           <button
             onClick={handleSignOut}
-            className="btn bg-pink-500 text-white font-bold rounded-full"
+            className="bg-linear-to-r btn from-pink-500 to-purple-500 text-white font-semibold rounded-full hover:scale-105 transition-transform duration-300 hover:bg-linear-to-l hover:shadow-md"
           >
             LogOut
           </button>
@@ -110,7 +111,7 @@ const Navbar = () => {
         <div className="navbar-end mr-2">
           <Link
             to="/login"
-            className="btn bg-pink-500 text-white font-bold rounded-full "
+            className="bg-linear-to-r btn from-pink-500 to-purple-500 text-white font-semibold rounded-full hover:scale-105 transition-transform duration-300 hover:bg-linear-to-l hover:shadow-md"
           >
             Login
           </Link>
