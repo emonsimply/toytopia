@@ -1,29 +1,30 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import Logo from "../Logo/Logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white mt-10 rounded-3xl">
+    <footer className="bg-black text-white rounded-3xl">
       <div className="p-10 grid md:grid-cols-4 gap-10">
         
         {/* Brand Info */}
         <div>
-          <h2 className="text-2xl font-bold mb-3 text-pink-500">ToyTopia</h2>
+          <Logo></Logo>
           <p className="text-sm leading-6 opacity-80">
             A vibrant marketplace for kids' toys — discover, explore, and bring joy home! 
             Supporting local toy sellers and happy little buyers.
           </p>
           <div className="flex space-x-4 mt-4 text-xl">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-pink-500 transition">
+            <a href="https://www.facebook.com/foysalislamemon77" target="_blank" rel="noreferrer" className="hover:text-primary transition">
               <FaFacebookF />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-pink-500 transition">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-primary transition">
               <FaInstagram />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-pink-500 transition">
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-primary transition">
               <FaTwitter />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-pink-500 transition">
+            <a href="https://www.linkedin.com/in/emonsimply/" target="_blank" rel="noreferrer" className="hover:text-primary transition">
               <FaLinkedinIn />
             </a>
           </div>
@@ -33,10 +34,10 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm opacity-80">
-            <li><a href="/terms" className="hover:text-pink-500 transition">Terms & Conditions</a></li>
-            <li><a href="/privacy" className="hover:text-pink-500 transition">Privacy Policy</a></li>
-            <li><a href="/about" className="hover:text-pink-500 transition">About Us</a></li>
-            <li><a href="/contact" className="hover:text-pink-500 transition">Contact</a></li>
+            <li><a href="/terms" className="hover:text-primary transition">Terms & Conditions</a></li>
+            <li><a href="/privacy" className="hover:text-primary transition">Privacy Policy</a></li>
+            <li><a href="/about" className="hover:text-primary transition">About Us</a></li>
+            <li><a href="/contact" className="hover:text-primary transition">Contact</a></li>
           </ul>
         </div>
 
@@ -66,7 +67,7 @@ const Footer = () => {
             
             <button
               type="submit"
-              className="bg-pink-500 hover:bg-pink-600 px-4 py-2 rounded-md text-white font-medium transition"
+              className="bg-primary hover:bg-pink-600 px-4 py-2 rounded-md text-white font-medium transition"
             >
               Subscribe
             </button>

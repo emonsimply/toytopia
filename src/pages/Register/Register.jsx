@@ -80,7 +80,7 @@ const Register = () => {
   };
 
   return (
-    <div className="card bg-white w-full max-w-sm mx-auto shrink-0 shadow-lg rounded-3xl">
+    <div className="card bg-white w-full max-w-sm mx-auto shrink-0 shadow-lg rounded-3xl mt-12">
       <Helmet>
         <title>Register | ToyTopia</title>
         <meta name="description" content="Create your ToyTopia account to start exploring toys." />
@@ -88,7 +88,7 @@ const Register = () => {
       <div className="card-body">
         <form onSubmit={handleRegister}>
           <fieldset className="fieldset relative">
-            <h1 className="text-3xl font-bold text-center mb-6 text-pink-500">
+            <h1 className="text-3xl font-bold text-center mb-6 text-primary">
               Register
             </h1>
             <label className="label">Name</label>
@@ -126,7 +126,7 @@ const Register = () => {
               {showPassword ? <FaEye size={20} /> : <FaEyeSlash size={20} />}
             </span>
 
-            <button className="btn rounded-full bg-pink-500 text-white hover:bg-pink-600 mt-4">
+            <button className="btn rounded-full bg-primary text-white hover:bg-pink-600 mt-4">
               Register
             </button>
             <div className="divider">OR</div>
@@ -143,7 +143,7 @@ const Register = () => {
           Already have an account?{" "}
           <Link
             to="/login"
-            className="text-pink-500 font-semibold hover:underline"
+            className="text-primary font-semibold hover:underline"
           >
             Login
           </Link>

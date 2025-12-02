@@ -11,7 +11,7 @@ const ErrorPage = () => {
         <title>404 Not Found | ToyTopia</title>
         <meta name="description" content="Oops! The page you're looking for doesn't exist." />
       </Helmet>
-      <h1 className="text-9xl font-extrabold text-pink-500 mb-4">404</h1>
+      <h1 className="text-9xl font-extrabold text-primary mb-4">404</h1>
       <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-3">
         Oops! Page Not Found
       </h2>

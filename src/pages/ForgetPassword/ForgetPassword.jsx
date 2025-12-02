@@ -30,14 +30,14 @@ const ForgetPassword = () => {
   };
 
   return (
-    <div className="card bg-white w-full max-w-sm mx-auto shrink-0 shadow-lg rounded-3xl">
+    <div className="card bg-white w-full max-w-sm mx-auto shrink-0 shadow-lg rounded-3xl mt-12">
       <Helmet>
         <title>Reset Password | ToyTopia</title>
         <meta name="description" content="Reset your ToyTopia account password securely." />
       </Helmet>
       <div className="card-body">
         <fieldset className="fieldset">
-          <h1 className="text-3xl font-bold text-center mb-6 text-pink-500">
+          <h1 className="text-3xl font-bold text-center mb-6 text-primary">
             Reset Password
           </h1>
           <label className="label">Email</label>
@@ -50,7 +50,7 @@ const ForgetPassword = () => {
           />
           <button
             onClick={handlePassword}
-            className="btn rounded-full bg-pink-500 text-white hover:bg-pink-600 mt-4"
+            className="btn rounded-full bg-primary text-white hover:bg-pink-600 mt-4"
           >
             Reset Password
           </button>

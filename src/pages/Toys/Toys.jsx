@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 const Toys = () => {
   const { toys, loading } = useToys();
   return (
-    <div>
+    <div className="mt-12">
       <Helmet>
         <title>Toys | ToyTopia</title>
         <meta

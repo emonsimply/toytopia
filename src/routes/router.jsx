@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/toys',
-        element: <PrivateRoute><Toys></Toys></PrivateRoute>,
+        element:<Toys></Toys>,
       },
       {
         path: '/toyDetails/:id',
@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <PrivateRoute><AboutUs></AboutUs></PrivateRoute>,
+        element: <AboutUs></AboutUs>,
       }
     ]
   },

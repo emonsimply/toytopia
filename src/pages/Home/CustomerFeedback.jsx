@@ -1,5 +1,5 @@
 import React from "react";
-import userLogo from "../../assets/user.png"
+import userLogo from "../../assets/user.png";
 
 const CustomerFeedback = () => {
   const feedbacks = [
@@ -22,21 +22,33 @@ const CustomerFeedback = () => {
       name: "Rafi's Mom",
       img: "https://i.ibb.co/1LytmQz/mom1.jpg",
       comment: "Amazing quality toys! My kid loves the building blocks.",
-    }
+    },
   ];
 
   return (
-    <section className="bg-linear-to-r from-pink-100 to-pink-400 mt-16 rounded-3xl py-16" data-aos="zoom-in-left"  data-aos-duration="3000">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-white">What Our Customers Say</h2>
+    <section className="bg-linear-to-r from-pink-100 to-primary rounded-3xl py-16">
+      <div
+        className="text-center mb-12"
+        data-aos="fade-up"
+        data-aos-duration="3000"
+      >
+        <h2 className="text-4xl font-bold text-white">
+          What Our Customers Say
+        </h2>
         <p className="text-white mt-2">Happy families, happy smiles!</p>
       </div>
 
-      <div className="grid gap-8 px-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+      <div
+        className="grid gap-8 px-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto"
+        data-aos="fade-up"
+        data-aos-duration="3000"
+      >
         {feedbacks.map((f, i) => (
           <div
             key={i}
             className="card bg-white/40 shadow-xl hover:scale-105 transition-transform duration-300"
+            data-aos="fade-up"
+            data-aos-duration="3000"
           >
             <div className="card-body items-center text-center">
               <img

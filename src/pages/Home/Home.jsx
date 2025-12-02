@@ -4,6 +4,8 @@ import PopularToys from "./PopularToys";
 import { Helmet } from "react-helmet";
 import WhyChooseUs from "./WhyChooseUs";
 import CustomerFeedback from "./CustomerFeedback";
+import ToyCategories from "./ToyCategories";
+import FAQs from "./FAQs";
 
 const Home = () => {
   return (
@@ -18,7 +20,11 @@ const Home = () => {
       <Slider></Slider>
       <PopularToys></PopularToys>
       <WhyChooseUs></WhyChooseUs>
+      
+      <ToyCategories></ToyCategories>
+
       <CustomerFeedback></CustomerFeedback>
+      <FAQs></FAQs>
     </div>
   );
 };

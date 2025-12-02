@@ -23,7 +23,7 @@ const ToyCard = ({ toy }) => {
 
         
           <Link to={`/toyDetails/${toyId}`}>
-            <button className="btn w-full mt-2 rounded-full bg-pink-500 hover:bg-pink-600 text-white">
+            <button className="btn w-full mt-2 rounded-full bg-primary hover:bg-pink-600 text-white">
               View More
             </button>
           </Link>

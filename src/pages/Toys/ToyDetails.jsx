@@ -63,7 +63,7 @@ const ToyDetails = () => {
           <hr className="opacity-10 my-6" />
           {/* form */}
           <div className="card w-full mx-auto max-w-sm shrink-0">
-            <h3 className="text-2xl text-center font-bold text-pink-500">
+            <h3 className="text-2xl text-center font-bold text-primary">
               Try Now
             </h3>
             <div className="card-body">
@@ -81,7 +81,7 @@ const ToyDetails = () => {
                     className="input"
                     placeholder="Your Email"
                   />
-                  <button className="btn w-full mx-auto bg-pink-500 hover:bg-pink-600 text-white font-bold  mt-4 rounded-full">
+                  <button className="btn w-full mx-auto bg-primary hover:bg-pink-600 text-white font-bold  mt-4 rounded-full">
                     Try Now
                   </button>
                 </fieldset>

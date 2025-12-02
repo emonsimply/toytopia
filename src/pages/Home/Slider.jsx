@@ -24,7 +24,7 @@ const Slider = () => {
   ];
 
   return (
-    <section className="mt-5" data-aos="zoom-in-right"  data-aos-duration="3000">
+    <section className="mt-12" data-aos="zoom-out-up"  data-aos-duration="3000">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -42,7 +42,7 @@ const Slider = () => {
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
             <div
-              className="relative w-full h-[50vh] flex items-center justify-center text-center bg-cover bg-center"
+              className="relative w-full h-[60vh] flex items-center justify-center text-center bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.img})` }}
             >
               <div className="absolute inset-0 bg-black/40 rounded-2xl"></div>
@@ -51,7 +51,7 @@ const Slider = () => {
                   {slide.title}
                 </h2>
                 <p className="text-lg md:text-xl opacity-90">{slide.desc}</p>
-                <button className="mt-6 px-6 py-3 bg-pink-500 text-white font-semibold rounded-full hover:bg-pink-600 transition">
+                <button className="mt-6 px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-pink-600 transition">
                   Shop Now
                 </button>
               </div>

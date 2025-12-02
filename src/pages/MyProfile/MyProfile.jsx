@@ -73,7 +73,7 @@ const MyProfile = () => {
                 placeholder="Photo URL"
               />
 
-              <button className="btn rounded-full bg-pink-500 text-white hover:bg-pink-600 mt-4">
+              <button className="btn rounded-full bg-primary text-white hover:bg-pink-600 mt-4">
                 Save Changes
               </button>
             </fieldset>

@@ -1,14 +1,15 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { singInUser, singInWithGoogle } = use(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
 
-  
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -60,16 +61,13 @@ const Login = () => {
   
 
   return (
-    <div className="card bg-white w-full max-w-sm mx-auto shrink-0 shadow-lg rounded-3xl">
-      <Helmet>
-        <title>Login | ToyTopia</title>
-        <meta name="description" content="Login to ToyTopia and explore local toy deals." />
-      </Helmet>
+    <div className="card bg-white w-full max-w-sm mx-auto shrink-0 shadow-lg rounded-3xl mt-12">
+      
       <div className="card-body">
         <form onSubmit={handleLogin}>
           <fieldset className="fieldset">
-            <h1 className="text-3xl font-bold text-center mb-6 text-pink-500">
-              Login
+            <h1 className="text-3xl font-bold text-center mb-6 text-primary">
+              Register
             </h1>
             <label className="label">Email</label>
             <input
@@ -81,16 +79,22 @@ const Login = () => {
             <label className="label">Password</label>
             <input
               name="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               className="input"
               placeholder="Password"
             />
+            <span
+              className="absolute right-12 top-50 cursor-pointer text-gray-500"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEye size={20} /> : <FaEyeSlash size={20} />}
+            </span>
             <div>
               <Link to='/forget-password'>
               <a className="link link-hover">Forgot password?</a>
               </Link>
             </div>
-            <button className="btn rounded-full bg-pink-500 text-white hover:bg-pink-600 mt-4">
+            <button className="btn rounded-full bg-primary text-white hover:bg-pink-600 mt-4">
               Login
             </button>
             <div className="divider">OR</div>
@@ -107,7 +111,7 @@ const Login = () => {
           Don't have an account?{" "}
           <Link
             to="/register"
-            className="text-pink-500 font-semibold hover:underline"
+            className="text-primary font-semibold hover:underline"
           >
             Register
           </Link>
