@@ -1,62 +1,170 @@
-# ToyTopia
+# ToyTopia 🎈
 
-**ToyTopia** is a vibrant and playful online marketplace for kids' toys, encouraging families to discover and support local toy sellers.
-This platform allows users to browse, view details, and interact with toys through an engaging and dynamic interface.
+A vibrant and playful online marketplace for kids' toys — built with **React**, **Firebase Authentication**, and **Tailwind CSS**. Parents can browse toys, view details, and enjoy a smooth, responsive user experience.
 
+Live URL: **[https://toytopia-emonsimply.netlify.app/](https://toytopia-emonsimply.netlify.app/)**
+GitHub Repo: **[https://github.com/emonsimply/toytopia](https://github.com/emonsimply/toytopia)**
 
-## 🌐 Live Website
-🔗 [Visit ToyTopia](https://b12a9-toytopia-emonsimply.netlify.app/)
+---
 
+## 📌 Project Overview
 
+ToyTopia is a single‑page local kids' toy store platform where users can:
 
-## 🎯 Project Purpose
-The purpose of this project is to create an interactive toy marketplace where:
-* Users can explore different toys and view detailed information.
-* Logged-in users can access private pages like **My Profile** and **Company Details**.
-* The design focuses on a **fun, responsive, and user-friendly** experience for kids and families.
+* Discover toys from various categories
+* View detailed information about each toy
+* Authenticate with Email/Password & Google
+* Access private routes like **Toy Details** and **My Profile**
+* Update profile using Firebase `updateProfile()`
+* Reset forgotten passwords
 
+The platform is designed with a **vibrant, kid‑friendly UI**, fully responsive layout, protected routes, and dynamic titles.
 
+---
 
-## ✨ Key Features
+## ⭐ Key Features
 
-* 🏠 **Dynamic Home Page** — includes toy categories, popular toys, and extra creative sections.
-* 🔒 **Firebase Authentication** — secure email/password and Google login system.
-* 👤 **Private Routes** — access restricted pages like My Profile only after logging in.
-* 🧩 **Responsive Design** — fully optimized for mobile, tablet, and desktop devices.
-* 💬 **User Feedback Integration** — toy detail and profile updates.
-* ⚡ **React Helmet** — dynamic page titles and metadata for SEO.
-* 🎨 **Smooth Animations** — powered by AOS and Swiper.
+### 🔐 Authentication
 
+* Email/Password Login
+* Google Login
+* Register with Name, Email, Password, and Photo URL
+* Password validation (uppercase, lowercase, min-length)
+* Show/Hide password functionality
+* Persistent login using Firebase `onAuthStateChanged`
 
+### 🧸 Toys & Data
 
-## Technologies Used
+* Custom JSON data with minimum 6 popular toys
+* Hosted toy images via `imgbb`/`postimg`
+* Toy Details Page (Protected)
+* Try Now Form with success alert
 
-* **React (Vite)**
-* **Tailwind CSS**
-* **DaisyUI**
-* **Firebase Authentication**
-* **React Router v7**
-* **React Helmet**
-* **SweetAlert2**
-* **Swiper**
-* **AOS Animation Library**
-* **Axios**
+### 🧭 Routing System
 
+* Protected Private Routes
+* Redirect to login if not authenticated
+* Does NOT redirect after reload due to Firebase auth persistence
+* 404 Page
+* Extra meaningful private route
+* Dynamic Page Titles with `react-helmet`
 
+### 🎨 UI / UX
 
-## NPM Packages Used
+* Fully responsive (Mobile, Tablet, Desktop)
+* Colorful kid-friendly layout
+* DaisyUI + TailwindCSS styling
+* Swiper Slider / AOS Animations
+* Navbar with active route indicators
+* Footer with social links, privacy policy, terms
 
-Package                    Purpose                                     
+---
 
-* firebase                 User authentication and profile updates.    
-* react-router             Routing and navigation.                      
-* react-helmet             Manage page title and meta tags dynamically. 
-* aos                      Scroll animations.                           
-* swiper                   Responsive sliders.                          
-* react-icons              Icons for UI.                                
-* sweetalert2              Custom alert and confirmation dialogs.       
-* axios                    HTTP requests.                               
-* react-loader-spinner     Loading spinner component.                   
-* tailwindcss/daisyui      Styling and UI components.                   
+## 🛠️ Tech Stack
+
+* **React 19** (SPA)
+* **Vite** (Build tool)
+* **Firebase 12** (Auth)
+* **TailwindCSS 4 + DaisyUI** (UI)
+* **React Router 7** (Routing)
+* **SweetAlert2** (Alerts)
+* **Swiper / AOS** (Animations)
+* **Axios** (Data fetching)
+* **React Helmet** (Dynamic titles)
+
+---
+
+## 📁 Project Structure
+
+```
+📦 toytopia
+├── src
+│   ├── assets
+│   ├── components
+│   ├── contexts  
+│   ├── firebase 
+│   ├── hooks
+│   ├── layouts
+│   ├── pages
+│   ├── routes
+│   ├── index.css
+│   └── main.jsx
+├── public
+├── .env.local
+└── README.md
+```
+
+---
+
+## 🔑 Environment Variables
+
+Create a `.env` file at the project root:
+
+```
+VITE_apiKey=your_api_key
+VITE_authDomain=your_authDomain
+VITE_projectId=your_projectId
+VITE_storageBucket=your_storageBucket
+VITE_messagingSenderId=your_sender_id
+VITE_appId=your_app_id
+```
+
+⚠️ Do NOT commit `.env` file.
+
+---
+
+## 🚀 Installation & Setup
+
+```
+# Clone the repository
+git clone https://github.com/emonsimply/toytopia
+cd toytopia
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+---
+
+## 📌 Features Implemented (Checklist)
+
+* [x] Responsive layout
+* [x] Firebase Authentication
+* [x] Google Login
+* [x] Protected routes
+* [x] Dynamic titles
+* [x] Try Now Form
+* [x] Profile update using updateProfile()
+* [x] Show/Hide password
+* [x] Forget password + auto-filled email
+* [x] Swiper / AOS included
+* [x] 404 page
+* [x] Hosted on Netlify
+* [x] Minimum 10 meaningful GitHub commits
+* [x] Custom JSON data with images
+
+---
+
+## 📸 Screenshots
+
+*Add your project screenshots here (optional).*
+
+---
+
+## 📜 License
+
+This project is created for **Assignment-09 (Orchid Category)** and is free for educational use.
+
+---
+
+## 🙋‍♂️ Author
+
+**Foysal Islam Emon**
+
+* GitHub: [https://github.com/emonsimply](https://github.com/emonsimply)
+* Live Project: [https://toytopia-emonsimply.netlify.app/](https://toytopia-emonsimply.netlify.app/)
 
 
