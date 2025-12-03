@@ -46,7 +46,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-3">Contact Info</h3>
           <ul className="space-y-2 text-sm opacity-80">
             <li>📍 123 Toy Street, Dhaka, Bangladesh</li>
-            <li>📞 +880 1234-567890</li>
+            <li>📞 +880 1631439816</li>
             <li>✉️ support@toyTopia.com</li>
             <li>🕐 Mon - Sat: 9:00 AM - 8:00 PM</li>
           </ul>
